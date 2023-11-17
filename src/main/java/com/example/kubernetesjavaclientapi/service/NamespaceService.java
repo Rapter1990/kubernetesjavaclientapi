@@ -4,8 +4,6 @@ import com.example.kubernetesjavaclientapi.dto.namespace.NameSpaceDto;
 import com.example.kubernetesjavaclientapi.payload.request.namespace.CreateNamespaceRequest;
 import com.example.kubernetesjavaclientapi.payload.request.namespace.DeleteNamespaceRequest;
 import com.example.kubernetesjavaclientapi.payload.request.namespace.EditNamespaceRequest;
-import com.example.kubernetesjavaclientapi.payload.request.pods.DeletePodRequest;
-import com.example.kubernetesjavaclientapi.payload.request.pods.EditPodRequest;
 import io.kubernetes.client.openapi.ApiException;
 import io.kubernetes.client.openapi.apis.AppsV1Api;
 import io.kubernetes.client.openapi.apis.CoreV1Api;
