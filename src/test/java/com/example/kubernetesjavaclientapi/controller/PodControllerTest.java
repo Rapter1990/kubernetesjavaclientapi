@@ -2,9 +2,9 @@ package com.example.kubernetesjavaclientapi.controller;
 
 import com.example.kubernetesjavaclientapi.base.BaseControllerTest;
 import com.example.kubernetesjavaclientapi.dto.pod.PodDto;
-import com.example.kubernetesjavaclientapi.payload.request.CreatePodRequest;
-import com.example.kubernetesjavaclientapi.payload.request.DeletePodRequest;
-import com.example.kubernetesjavaclientapi.payload.request.EditPodRequest;
+import com.example.kubernetesjavaclientapi.payload.request.pods.CreatePodRequest;
+import com.example.kubernetesjavaclientapi.payload.request.pods.DeletePodRequest;
+import com.example.kubernetesjavaclientapi.payload.request.pods.EditPodRequest;
 import com.example.kubernetesjavaclientapi.service.PodService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.kubernetes.client.openapi.models.V1ObjectMeta;

@@ -1,4 +1,4 @@
-package com.example.kubernetesjavaclientapi.payload.request;
+package com.example.kubernetesjavaclientapi.payload.request.pods;
 
 import lombok.Builder;
 import lombok.Data;
