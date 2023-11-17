@@ -7,6 +7,9 @@ import lombok.Getter;
 import javax.annotation.Nullable;
 import java.time.OffsetDateTime;
 
+/**
+ * Data Transfer Object (DTO) {@link V1ManagedFieldsEntryDto} representing Kubernetes V1ManagedFieldsEntry information.
+ */
 @Builder
 @Getter
 public class V1ManagedFieldsEntryDto {

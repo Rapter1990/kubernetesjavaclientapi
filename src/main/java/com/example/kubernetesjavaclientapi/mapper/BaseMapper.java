@@ -3,6 +3,12 @@ package com.example.kubernetesjavaclientapi.mapper;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Base interface for object mapping between two types.
+ *
+ * @param <S> the source type
+ * @param <T> the target type
+ */
 public interface BaseMapper<S, T> {
 
     /**

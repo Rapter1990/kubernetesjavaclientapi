@@ -13,6 +13,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Data Transfer Object (DTO) {@link PodDto} representing information about a Kubernetes Pod.
+ */
 @Builder
 @Getter
 public class PodDto {

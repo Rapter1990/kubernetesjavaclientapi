@@ -20,6 +20,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Service class {@link PodService} for managing Kubernetes Pods.
+ * Provides methods for listing, creating, editing, and deleting Pods.
+ */
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -30,6 +34,12 @@ public class PodService {
     private final V1ManagedFieldsEntryToV1ManagedFieldsEntryDtoMapper v1ManagedFieldsEntryToV1ManagedFieldsEntryDtoMapper = V1ManagedFieldsEntryToV1ManagedFieldsEntryDtoMapper.initialize();
     private final V1OwnerReferenceToV1OwnerReferenceDtoMapper v1OwnerReferenceToV1OwnerReferenceDtoMapper = V1OwnerReferenceToV1OwnerReferenceDtoMapper.initialize();
 
+    /**
+     * Retrieves a list of PodDto objects representing Pods from all namespaces.
+     *
+     * @return A list of PodDto objects.
+     * @throws Exception If an error occurs while fetching the list of Pods.
+     */
     public List<PodDto> listPods() throws Exception {
 
         V1PodList list = coreV1Api.listPodForAllNamespaces(null,
@@ -73,6 +83,13 @@ public class PodService {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Creates a new Pod based on the provided request.
+     *
+     * @param request The request containing information to create the Pod.
+     * @return The created Pod.
+     * @throws ApiException If an error occurs while creating the Pod.
+     */
     public V1Pod createPod(CreatePodRequest request) throws ApiException {
         V1Pod pod = new V1Pod();
         V1ObjectMeta metadata = new V1ObjectMeta();
@@ -100,6 +117,13 @@ public class PodService {
                 null);
     }
 
+    /**
+     * Edits an existing Pod based on the provided request.
+     *
+     * @param request The request containing information to edit the Pod.
+     * @return The edited Pod.
+     * @throws ApiException If an error occurs while editing the Pod.
+     */
     public V1Pod editPod(EditPodRequest request) throws ApiException {
 
             // Retrieve the existing pod
@@ -123,7 +147,15 @@ public class PodService {
                 null);
     }
 
+    /**
+     * Deletes an existing Pod based on the provided request.
+     *
+     * @param request The request containing information to delete the Pod.
+     * @return The deleted Pod.
+     * @throws ApiException If an error occurs while deleting the Pod.
+     */
     public V1Pod deletePod(DeletePodRequest request) throws ApiException {
         return coreV1Api.deleteNamespacedPod(request.getPodName(), request.getNamespace(), null, null, null, null, null, null);
     }
+
 }

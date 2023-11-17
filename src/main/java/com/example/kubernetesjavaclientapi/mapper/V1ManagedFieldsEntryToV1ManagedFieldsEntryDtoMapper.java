@@ -5,7 +5,9 @@ import io.kubernetes.client.openapi.models.V1ManagedFieldsEntry;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-
+/**
+ * Mapper interface {@link V1ManagedFieldsEntryToV1ManagedFieldsEntryDtoMapper} for mapping Kubernetes V1ManagedFieldsEntry objects to V1ManagedFieldsEntryDto objects.
+ */
 @Mapper
 public interface V1ManagedFieldsEntryToV1ManagedFieldsEntryDtoMapper extends BaseMapper<V1ManagedFieldsEntry, V1ManagedFieldsEntryDto> {
 

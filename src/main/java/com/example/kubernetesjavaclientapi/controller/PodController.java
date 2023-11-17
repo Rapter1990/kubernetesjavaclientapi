@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Controller class {@link PodController} for handling Kubernetes pod-related operations.
+ */
 @RestController
 @RequestMapping("/api/v1/kubernetes/pods")
 @RequiredArgsConstructor
@@ -23,11 +26,23 @@ public class PodController {
 
     private final PodService podService;
 
+    /**
+     * Retrieves a list of Kubernetes pods.
+     *
+     * @return A list of {@link PodDto} representing Kubernetes pods.
+     * @throws Exception if an error occurs during pod retrieval.
+     */
     @GetMapping("/listPods")
     public List<PodDto> listPods() throws Exception {
         return podService.listPods();
     }
 
+    /**
+     * Creates a new Kubernetes pod based on the provided request.
+     *
+     * @param request The {@link CreatePodRequest} containing pod creation details.
+     * @return A {@link ResponseEntity} indicating the status of the pod creation operation.
+     */
     @PostMapping("/createPod")
     public ResponseEntity<String> createPod(@RequestBody CreatePodRequest request) {
         try {
@@ -40,6 +55,12 @@ public class PodController {
         }
     }
 
+    /**
+     * Creates a new Kubernetes pod based on the provided request.
+     *
+     * @param request The {@link CreatePodRequest} containing pod creation details.
+     * @return A {@link ResponseEntity} indicating the status of the pod creation operation.
+     */
     @PutMapping("/editPod")
     public ResponseEntity<String> editPod(@RequestBody EditPodRequest request){
         try {
@@ -52,6 +73,12 @@ public class PodController {
         }
     }
 
+    /**
+     * Deletes an existing Kubernetes pod based on the provided request.
+     *
+     * @param request The {@link DeletePodRequest} containing pod deletion details.
+     * @return A {@link ResponseEntity} indicating the status of the pod deletion operation.
+     */
     @DeleteMapping("/deletePod")
     public ResponseEntity<String> deletePod(@RequestBody DeletePodRequest request){
         try {

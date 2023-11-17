@@ -5,6 +5,9 @@ import io.kubernetes.client.openapi.models.V1OwnerReference;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+/**
+ * Mapper interface {@link V1OwnerReferenceToV1OwnerReferenceDtoMapper} for mapping Kubernetes V1OwnerReference objects to V1OwnerReferenceDto objects.
+ */
 @Mapper
 public interface V1OwnerReferenceToV1OwnerReferenceDtoMapper extends BaseMapper<V1OwnerReference, V1OwnerReferenceDto> {
 

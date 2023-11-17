@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.util.Map;
 
+/**
+ * A request class {@link EditPodRequest} representing the information needed to edit a Kubernetes Pod.
+ */
 @Data
 @Builder
 public class EditPodRequest {
