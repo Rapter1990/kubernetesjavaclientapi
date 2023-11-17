@@ -1,6 +1,7 @@
 package com.example.kubernetesjavaclientapi.config;
 
 import io.kubernetes.client.openapi.ApiClient;
+import io.kubernetes.client.openapi.apis.AppsV1Api;
 import io.kubernetes.client.openapi.apis.CoreV1Api;
 import io.kubernetes.client.util.Config;
 import org.springframework.context.annotation.Bean;
@@ -34,4 +35,14 @@ public class KubernetesConfig {
         return new CoreV1Api(apiClient);
     }
 
+    /**
+     * Creates and configures an instance of {@link AppsV1Api} using the provided {@link ApiClient}.
+     *
+     * @param apiClient The {@link ApiClient} to use for the {@link AppsV1Api} instance.
+     * @return An initialized {@link AppsV1Api} instance.
+     */
+    @Bean
+    public AppsV1Api appsV1Api(ApiClient apiClient) {
+        return new AppsV1Api(apiClient);
+    }
 }
