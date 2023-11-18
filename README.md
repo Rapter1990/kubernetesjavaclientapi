@@ -1,4 +1,4 @@
-# Spring Boot Kubernetes Java Client Client Example
+# Spring Boot Kubernetes Java Client Api Example
 
 <p align="center">
     <img src="screenshots/springboot-kubernetes-java-client-api-main-image.png" alt="Main Information" width="700" height="400">
