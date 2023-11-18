@@ -1,0 +1,491 @@
+{
+	"info": {
+		"_postman_id": "fc8b2ee1-71ba-420f-8c85-8ea4aee8ff9f",
+		"name": "Kubernetes Java Client API Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5570426"
+	},
+	"item": [
+		{
+			"name": "Pods",
+			"item": [
+				{
+					"name": "Get pods",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pod",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"namespace\": \"default\",\r\n    \"podName\": \"example-pod\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/pods/deletePod",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"pods",
+								"deletePod"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Pod",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"namespace\": \"default\",\r\n    \"podName\": \"example-pod\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/pods/createPod",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"pods",
+								"createPod"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Pod",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"namespace\": \"default\",\r\n    \"podName\": \"example-pod\",\r\n    \"updatedLabels\": {\r\n        \"key1\": \"value1\",\r\n        \"key2\": \"value2\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/pods/editPod",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"pods",
+								"editPod"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Namespaces",
+			"item": [
+				{
+					"name": "Get Namespaces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/namespaces/listNamespaces",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"namespaces",
+								"listNamespaces"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Namespace",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"new-namespace-name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/namespaces/createNamespace",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"namespaces",
+								"createNamespace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Namespace",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"existingName\": \"new-namespace-name\",\r\n  \"updatedName\" : \"updated-namespace-name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/namespaces/editNamespace",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"namespaces",
+								"editNamespace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Namespace",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"updated-namespace-name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/namespaces/deleteNamespace",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"namespaces",
+								"deleteNamespace"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Get Services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/services/listServices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"services",
+								"listServices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"new-kubernetes-service\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/services/createService",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"services",
+								"createService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Service",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"existingName\" : \"new-kubernetes-service\",\r\n    \"updatedName\" : \"updated-kubernetes-service\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/services/editService",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"services",
+								"editService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Service",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"updated-kubernetes-service\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/services/deleteService",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"services",
+								"deleteService"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Deployments",
+			"item": [
+				{
+					"name": "Get Deployments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/deployments/listDeployments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"deployments",
+								"listDeployments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Deployment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"new-kubernetes-deployment\",\r\n  \"replicas\": 3,\r\n  \"labels\": {\r\n    \"app\": \"example-app\",\r\n    \"tier\": \"backend\"\r\n  },\r\n  \"containerName\": \"example-container\",\r\n  \"image\": \"your-docker-image:latest\",\r\n  \"containerPort\": 1234\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/deployments/createDeployment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"deployments",
+								"createDeployment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Deployment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"new-kubernetes-deployment\",\r\n  \"replicas\": 5,\r\n  \"labels\": {\r\n    \"app\": \"edited-app\",\r\n    \"environment\": \"production\"\r\n  },\r\n  \"containerName\": \"edited-container\",\r\n  \"image\": \"edited-docker-image:latest\",\r\n  \"containerPort\": 2121\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/deployments/editDeployment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"deployments",
+								"editDeployment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Deployment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"new-kubernetes-deployment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1010/api/v1/kubernetes/deployments/deleteDeployment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1010",
+							"path": [
+								"api",
+								"v1",
+								"kubernetes",
+								"deployments",
+								"deleteDeployment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
