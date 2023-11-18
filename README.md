@@ -1,7 +1,7 @@
 # Spring Boot Kubernetes Java Client Client Example
 
 <p align="center">
-    <img src="screenshots/springboot-kubernetes-java-client-api-main-image.png" alt="Main Information" width="600" height="500">
+    <img src="screenshots/springboot-kubernetes-java-client-api-main-image.png" alt="Main Information" width="700" height="400">
 </p>
 
 ### 📖 Information
