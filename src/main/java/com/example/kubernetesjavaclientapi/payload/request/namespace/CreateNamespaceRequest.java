@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * A request class {@link CreateNamespaceRequest} representing the information needed to create a new Kubernetes namespace.
+ */
 @Data
 @Builder
 @NoArgsConstructor

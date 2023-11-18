@@ -15,6 +15,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Service class {@link NamespaceService} for managing Kubernetes namespaces and related operations.
+ */
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -24,6 +27,12 @@ public class NamespaceService {
 
     private final AppsV1Api appsV1Api;
 
+    /**
+     * Retrieves a list of namespaces and maps them to NameSpaceDto objects.
+     *
+     * @return List of NameSpaceDto objects representing the namespaces.
+     * @throws ApiException if there is an error while retrieving the namespaces.
+     */
     public List<NameSpaceDto> listNameSpaces() throws ApiException {
 
         V1NamespaceList list = coreV1Api.listNamespace(
@@ -50,6 +59,13 @@ public class NamespaceService {
 
     }
 
+    /**
+     * Creates a new namespace based on the provided request.
+     *
+     * @param request The CreateNamespaceRequest containing information for creating the namespace.
+     * @return The created V1Namespace object.
+     * @throws ApiException if there is an error while creating the namespace.
+     */
     public V1Namespace createNamespace(CreateNamespaceRequest request) throws ApiException {
 
         V1Namespace namespace = new V1Namespace();
@@ -62,6 +78,13 @@ public class NamespaceService {
                 null);
     }
 
+    /**
+     * Edits an existing namespace based on the provided request.
+     *
+     * @param request The EditNamespaceRequest containing information for editing the namespace.
+     * @return The edited V1Namespace object.
+     * @throws ApiException if there is an error while editing the namespace.
+     */
     public V1Namespace editNamespace(EditNamespaceRequest request) throws ApiException {
 
         // Read the existing namespace
@@ -83,6 +106,13 @@ public class NamespaceService {
         return updatedNamespace;
     }
 
+    /**
+     * Deletes an existing namespace based on the provided request.
+     *
+     * @param request The DeleteNamespaceRequest containing information for deleting the namespace.
+     * @return The V1Status object representing the deletion status.
+     * @throws ApiException if there is an error while deleting the namespace.
+     */
     public V1Status deleteNamespace(DeleteNamespaceRequest request) throws ApiException {
 
         V1DeleteOptions deleteOptions = new V1DeleteOptions();
@@ -95,7 +125,13 @@ public class NamespaceService {
                 deleteOptions);
     }
 
-
+    /**
+     * Moves deployments from the existing namespace to the updated namespace.
+     *
+     * @param existingNamespace The current namespace.
+     * @param updatedNamespace  The updated namespace.
+     * @throws ApiException if there is an error while moving deployments.
+     */
     private void moveDeployments(String existingNamespace, String updatedNamespace) throws ApiException {
         V1DeploymentList deploymentList = appsV1Api.listNamespacedDeployment(existingNamespace,
                 null,
