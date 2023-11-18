@@ -218,11 +218,11 @@ $ mvn spring-boot:run
 <details>
 <summary>Click here to show the screenshots of project</summary>
     <p> Figure 1 </p>
-    <img src ="screenshots/prometheues.PNG">
+    <img src ="screenshots/1.PNG">
     <p> Figure 2 </p>
-    <img src ="screenshots/prometheues_1.PNG">
+    <img src ="screenshots/2.PNG">
     <p> Figure 3 </p>
-    <img src ="screenshots/grafana_1.PNG">
+    <img src ="screenshots/3.PNG">
 </details>
 
 ### Contributors
